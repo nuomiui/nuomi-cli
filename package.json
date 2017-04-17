@@ -1,0 +1,30 @@
+{
+  "name": "nuomi-cli",
+  "version": "0.0.1",
+  "description": "糯米组件化命令行",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "nuomi-cli": "bin/nuomi-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuomiui/nuomi-cli.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "memoryza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuomiui/nuomi-cli/issues"
+  },
+  "homepage": "https://github.com/nuomiui/nuomi-cli#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.9.0"
+  }
+}
