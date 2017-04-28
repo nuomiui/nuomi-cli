@@ -11,7 +11,7 @@ module.exports = () => {
         let viewName = yield prompt('Input Template Render Technology(输入模板渲染技术)[react|vue]: ');
         let cssName = yield prompt('Input css Technology(输入css技术)[css|less|scss]: ');
 
-        let gitUrl = 'git@github.com:nuomiui/nuomi-component.git';
+        let gitUrl = 'https://github.com/nuomiui/nuomi-component.git';
         let branch = `${viewName}-${cssName}`;
 
         if (!config.js[viewName]) {
