@@ -1,5 +1,7 @@
 'use strict'
-const exec = require('child_process').exec;
+const child_process = require('child_process');
+const exec = child_process.exec;
+const execSync = child_process.execSync;
 const co = require('co');
 const prompt = require('co-prompt');
 const config = require('../template');
@@ -15,24 +17,24 @@ module.exports = () => {
         let branch = `${viewName}-${cssName}`;
 
         if (!config.js[viewName]) {
-            console.log(chalk.red('\n  Template Render not allow(您输入模板引擎技术不在支持列表中)!'))
+            console.log(chalk.red('\n  Template Render not allow(您输入模板引擎技术不在支持列表中)!'));
             process.exit()
         }
         if (!config.css[cssName]) {
-            console.log(chalk.red('\n  css technology not support(输入的css技术不在支持列表)!'))
-            process.exit()
+            console.log(chalk.red('\n  css technology not support(输入的css技术不在支持列表)!'));
+            process.exit();
         }
         let cmdStr = `git clone -b ${branch} ${gitUrl} ${projectName}`;
         console.log(chalk.white('\n Start generating...'));
-
         exec(cmdStr, (error, stdout, stderr) => {
             if (error) {
-              console.log(error)
-              process.exit()
+              console.log(error);
+              process.exit();
             }
-            console.log(chalk.green('\n √ Generation completed!'))
-            console.log(`\n cd ${projectName} && npm install \n`)
-            process.exit()
+            execSync(`cd ${projectName} && git branch -m ${branch} master`);
+            console.log(chalk.green('\n √ Generation completed!'));
+            console.log(`\n npm install \n`);
+            process.exit(0);
         });
     });
 }
