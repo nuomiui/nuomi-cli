@@ -13,6 +13,10 @@ program.command('init').description('Generate a new project').alias('i').action(
     require('../cli/init')()
 });
 
+program.command('upgrade').description('update compiler framework').alias('u').action(() => {
+    require('../cli/upgrade')()
+});
+
 program.parse(process.argv);
 
 if(!program.args.length){
