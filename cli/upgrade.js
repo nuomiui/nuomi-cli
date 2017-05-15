@@ -32,11 +32,11 @@ module.exports = () => {
               console.log(error);
               process.exit();
             }
-            let cmdList = ['cp -R upgrade/cli/ ./cli/',
-                'cp -R upgrade/audient/ ./audient/',
-                'cp -R upgrade/docs/ ./docs/',
-                'cp -R upgrade/src/common/libs/ ./src/common/libs/',
-                'cp -R upgrade/src/common/util/ ./src/common/util/',
+            let cmdList = ['cp -R upgrade/cli/* ./cli/',
+                'cp -R upgrade/audient/* ./audient/',
+                'cp -R upgrade/docs/* ./docs/',
+                'cp -R upgrade/src/common/libs/* ./src/common/libs/',
+                'cp -R upgrade/src/common/util/* ./src/common/util/',
                 'rm -rf upgrade'
             ];
             execSync(cmdList.join(' && '));
